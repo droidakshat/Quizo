@@ -23,7 +23,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var mUSername: String? = null
     private var mQuestionNum:Int?=null
     private var mCorrectanswer: Int = 0
-    private var num:Int? =null
+    private var num:Int =0
 
 
     private var progessbar: ProgressBar? = null
@@ -63,7 +63,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         tvOptionThree?.setOnClickListener(this)
         tvOptionFour?.setOnClickListener(this)
         btnSubmit?.setOnClickListener(this)
-        mQuestionlist = getRandomQuestions(num?:0) //constain.getquestions
+        mQuestionlist = getRandomQuestions(num) //constain.getquestions
 
         setQuestion()
 
@@ -81,6 +81,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val ques: question = mQuestionlist!![mCurrentPosition - 1]
 
         ivImage?.setImageResource(ques.image)
+        progessbar?.max = num?: 0
         progessbar?.progress = mCurrentPosition
         tvProgress?.text = "$mCurrentPosition/${progessbar?.max}"
         tvQuestion?.text = ques.questions
