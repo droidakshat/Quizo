@@ -21,9 +21,10 @@ class result : AppCompatActivity() {
 
      tvname.text=intent.getStringExtra(Constants.username)
         val correctAnswers=intent.getIntExtra(Constants.correctAnswers,0)
-        val totalAnswer=intent.getIntExtra(Constants.totalQuestion,0)
+       // val totalAnswer=intent.getIntExtra(Constants.totalQuestion,0)
+        val questionnum=intent.getIntExtra(Constants.questionsNUm,0)
 
-        tvscore.text="Your Score is $correctAnswers out of $totalAnswer"
+        tvscore.text="Your Score is $correctAnswers out of $questionnum"
 
 
         btnFinish.setOnClickListener{

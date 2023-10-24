@@ -20,10 +20,10 @@
             android:layout_width="wrap_content"
             android:layout_height="200dp"
             android:id="@+id/animation_view2"
-            app:lottie_rawRes="@raw/quiz"
+            app:lottie_rawRes="@raw/qq"
             app:lottie_autoPlay="true"
             android:layout_marginTop="50dp"
-            app:lottie_loop="false"/>
+            app:lottie_loop="true"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -66,14 +66,14 @@
             android:textSize="28sp"
             android:text="select no of questions"
             android:textStyle="bold"
-            android:background="#127BAB"
+            android:background="#0D0F10"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             />
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="5dp"
+
     >
 
 
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="40dp"
 
-        android:layout_marginTop="45dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#512DA8"
         android:padding="30dp"
         android:text="10"
@@ -97,7 +97,7 @@
         android:layout_width="100dp"
 
         android:layout_height="wrap_content"
-        android:layout_margin="36dp"
+        android:layout_margin="40dp"
         android:layout_marginTop="45dp"
         android:backgroundTint="#512DA8"
         android:padding="30dp"

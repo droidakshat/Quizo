@@ -43,7 +43,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         setContentView(R.layout.activity_quiz_questions)
 
         mUSername = intent.getStringExtra(Constants.username)
-        mQuestionNum=intent.getIntExtra("questionsNo",0)
+        mQuestionNum=intent.getIntExtra(Constants.questionsNUm,0)
         num=mQuestionNum?:0
 
 
@@ -175,11 +175,12 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         }
 
                         else -> {
-                            if(mCorrectanswer>5){
+                            if(mCorrectanswer>5&&num==10 ||mCorrectanswer>10&&num==20){
                             val intent = Intent(this, result::class.java)
                             intent.putExtra(Constants.username, mUSername)
                             intent.putExtra(Constants.correctAnswers, mCorrectanswer)
                             intent.putExtra(Constants.totalQuestion, mQuestionlist?.size)
+                                intent.putExtra(Constants.questionsNUm,num)
                             startActivity(intent)
                             finish()}
                             else{
@@ -187,6 +188,7 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                                 intent.putExtra(Constants.username, mUSername)
                                 intent.putExtra(Constants.correctAnswers, mCorrectanswer)
                                 intent.putExtra(Constants.totalQuestion, mQuestionlist?.size)
+                                intent.putExtra(Constants.questionsNUm,num)
                                 startActivity(intent)
                                 finish()
                             }

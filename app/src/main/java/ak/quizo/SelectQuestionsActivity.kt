@@ -21,19 +21,25 @@ class SelectQuestionsActivity : AppCompatActivity() {
         var start:Button=findViewById(R.id.Start)
 
         optOne.setOnClickListener{
-        //  var   valueToStore = optOne.text.toString().toIntOrNull()
-          //  selectedOption=valueToStore
+
             selectedOption=10
+            optOne.setBackgroundResource(R.drawable.options)
+            // Reset the background of optTwo to its original state
+            optTwo.setBackgroundResource(android.R.color.transparent)
+
         }
         optTwo.setOnClickListener{
-           // var valueToStore = optTwo.text.toString().toIntOrNull()
-            //selectedOption=valueToStore
+
             selectedOption=20
+            optTwo.setBackgroundResource(R.drawable.options)
+            // Reset the background of optTwo to its original state
+            optOne.setBackgroundResource(android.R.color.transparent)
+
         }
         start.setOnClickListener{
             val intent = Intent(this,QuizQuestionsActivity::class.java)
             intent.putExtra(Constants.username,tvname.text.toString())
-            intent.putExtra("questionsNo",selectedOption)
+            intent.putExtra(Constants.questionsNUm,selectedOption)
             startActivity(intent)
         }
 

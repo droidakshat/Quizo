@@ -18,11 +18,17 @@ class ResultActivity2 : AppCompatActivity() {
         val tvname:TextView=findViewById(R.id.username)
         val tvscore:TextView=findViewById(R.id.score)
         val btnFinish:Button=findViewById(R.id.finish)
+        var need:Int=0
 
         tvname.text=intent.getStringExtra(Constants.username)
         val correctAnswers=intent.getIntExtra(Constants.correctAnswers,0)
         val totalAnswer=intent.getIntExtra(Constants.totalQuestion,0)
-        val need:Int=5-correctAnswers
+        val questionnum=intent.getIntExtra(Constants.questionsNUm,0)
+        if(questionnum==10) {
+            need= 5 - correctAnswers
+        }else{
+             need =11-correctAnswers
+        }
 
         tvscore.text="Your Score is $correctAnswers out of $totalAnswer"
 
